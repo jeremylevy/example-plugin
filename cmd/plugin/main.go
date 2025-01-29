@@ -10,7 +10,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	pb "github.com/newco/plugin-proto/proto"
+	pb "github.com/jeremylevy/plugin-proto/proto"
 	"google.golang.org/grpc"
 )
 
