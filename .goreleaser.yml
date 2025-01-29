@@ -2,7 +2,7 @@
 project_name: example-plugin
 before:
   hooks:
-    - github.com/jeremylevy/plugin-proto go mod tidy
+    - GOPRIVATE=github.com/jeremylevy/plugin-proto go mod tidy
 builds:
   - env:
       - CGO_ENABLED=0
