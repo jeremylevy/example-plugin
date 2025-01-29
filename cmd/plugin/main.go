@@ -1,4 +1,4 @@
-// main.go
+// cmd/plugin/main.go
 package main
 
 import (
@@ -12,6 +12,13 @@ import (
 
 	pb "github.com/newco/plugin-proto/proto"
 	"google.golang.org/grpc"
+)
+
+// Build information (set via ldflags)
+var (
+	version = "dev"
+	commit  = "none"
+	date    = "unknown"
 )
 
 func findAvailablePort() (int, error) {
@@ -34,8 +41,8 @@ type server struct {
 func (s *server) GetMetadata(ctx context.Context, req *pb.MetadataRequest) (*pb.MetadataResponse, error) {
 	return &pb.MetadataResponse{
 		Name:        "example-plugin",
-		Version:     "1.0.0",
-		Description: "An example plugin implementation",
+		Version:     version,
+		Description: fmt.Sprintf("Example plugin (built from %s on %s)", commit[:7], date),
 	}, nil
 }
 
