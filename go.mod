@@ -2,10 +2,8 @@ module github.com/newco/example-plugin
 
 go 1.23.5
 
-replace github.com/jeremylevy/plugin-proto => ../plugin-proto
-
 require (
-	github.com/jeremylevy/plugin-proto v0.0.0
+	github.com/jeremylevy/plugin-proto v1.0.1
 	google.golang.org/grpc v1.70.0
 )
 
